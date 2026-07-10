@@ -30,8 +30,8 @@
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
     }
   </style>
-  <script async>
-    document.addEventListener("DOMContentLoaded", function() {
+  <script defer>
+    
     console.log("We are here");
     // Extract the login_hint or custom parameter from the URL
     const urlParams = new URLSearchParams(window.location.search);
@@ -45,7 +45,7 @@
           emailInput.setAttribute('readonly', true);
         }
       }
-    });
+
   </script>
 </head>
 <body>
