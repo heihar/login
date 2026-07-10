@@ -12,47 +12,47 @@
       console.log("DOM fully loaded and parsed");
     });
 
-    // 1. Selecteer de div die u wilt controleren
-    const doelDiv = document.getElementById('api');
+    // // 1. Selecteer de div die u wilt controleren
+    // const doelDiv = document.getElementById('api');
     
-    // 2. Definieer de actie die moet worden uitgevoerd bij een verandering
-    const callback = function(mutationsList, observer) {
-        for (const mutation of mutationsList) {
-            if (mutation.type === 'childList') {
-                console.log('Er is tekst of een HTML-element toegevoegd/verwijderd.');
-            } else if (mutation.type === 'attributes') {
-                console.log(`Het attribuut '${mutation.attributeName}' is aangepast.`);
-            }
-        }
-    };
+    // // 2. Definieer de actie die moet worden uitgevoerd bij een verandering
+    // const callback = function(mutationsList, observer) {
+    //     for (const mutation of mutationsList) {
+    //         if (mutation.type === 'childList') {
+    //             console.log('Er is tekst of een HTML-element toegevoegd/verwijderd.');
+    //         } else if (mutation.type === 'attributes') {
+    //             console.log(`Het attribuut '${mutation.attributeName}' is aangepast.`);
+    //         }
+    //     }
+    // };
     
-    // 3. Maak de observer aan en koppel de actie
-    const observer = new MutationObserver(callback);
+    // // 3. Maak de observer aan en koppel de actie
+    // const observer = new MutationObserver(callback);
     
-    // 4. Start het luisteren en geef aan WAT u precies wilt controleren
-    observer.observe(doelDiv, {
-        attributes: false,      // Luister naar veranderingen in attributen (bijv. class, style)
-        childList: true,       // Luister naar het toevoegen/verwijderen van HTML-kinderen
-        subtree: false,         // Luister ook naar veranderingen dieper in de div (kinderen van kinderen)
-        characterData: false    // Luister naar pure tekstwijzigingen
-    });
+    // // 4. Start het luisteren en geef aan WAT u precies wilt controleren
+    // observer.observe(doelDiv, {
+    //     attributes: false,      // Luister naar veranderingen in attributen (bijv. class, style)
+    //     childList: true,       // Luister naar het toevoegen/verwijderen van HTML-kinderen
+    //     subtree: false,         // Luister ook naar veranderingen dieper in de div (kinderen van kinderen)
+    //     characterData: false    // Luister naar pure tekstwijzigingen
+    // });
 
-    const vul_email_in = function(){
-      // Extract the login_hint or custom parameter from the URL
-      const urlParams = new URLSearchParams(window.location.search);
-      const emailHint = urlParams.get('email_hint');
-      if (emailHint) {
-        console.log(emailHint);
-        // Target the default B2C sign-up email input field ID
-        const emailInput = document.getElementById('email');
-        if (emailInput) {
-          console.log("We are in");
-          emailInput.value = emailHint;
-          // Optional: Make it read-only so users can't modify it
-          emailInput.setAttribute('readonly', true);
-        }
-      }
-    };
+    // const vul_email_in = function(){
+    //   // Extract the login_hint or custom parameter from the URL
+    //   const urlParams = new URLSearchParams(window.location.search);
+    //   const emailHint = urlParams.get('email_hint');
+    //   if (emailHint) {
+    //     console.log(emailHint);
+    //     // Target the default B2C sign-up email input field ID
+    //     const emailInput = document.getElementById('email');
+    //     if (emailInput) {
+    //       console.log("We are in");
+    //       emailInput.value = emailHint;
+    //       // Optional: Make it read-only so users can't modify it
+    //       emailInput.setAttribute('readonly', true);
+    //     }
+    //   }
+    // };
 
   </script>
 
