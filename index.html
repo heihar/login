@@ -20,7 +20,7 @@
     observer.observe(document, {
         attributes: false,      // Luister naar veranderingen in attributen (bijv. class, style)
         childList: true,       // Luister naar het toevoegen/verwijderen van HTML-kinderen
-        subtree: false,         // Luister ook naar veranderingen dieper in de div (kinderen van kinderen)
+        subtree: true,         // Luister ook naar veranderingen dieper in de div (kinderen van kinderen)
         characterData: false    // Luister naar pure tekstwijzigingen
     });
 
