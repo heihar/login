@@ -12,11 +12,15 @@
       console.log("DOM fully loaded and parsed");
     });
 
-    if (document.readyState !== 'loading') {
-    console.log('document is already ready, just execute code here');
-    }
+    // if (document.readyState !== 'loading') {
+    // console.log('document is already ready, just execute code here');
+    // }
 
-    window.addEventListener('load', () => { console.log("Hoi");}, false )
+    window.addEventListener('load', () => { 
+      console.log("Hoi");
+      const doelDiv = document.getElementById('api');
+      console.log( doelDiv);
+    }, false )
 
     // // 1. Selecteer de div die u wilt controleren
     // const doelDiv = document.getElementById('api');
