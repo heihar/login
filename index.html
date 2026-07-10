@@ -33,6 +33,9 @@
   <script defer>
     
     console.log("We are here");
+    document.addEventListener("DOMContentLoaded", (event) => {
+      console.log("DOM fully loaded and parsed");
+    });
 
     // 1. Selecteer de div die u wilt controleren
     const doelDiv = document.getElementById('api');
