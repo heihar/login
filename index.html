@@ -5,25 +5,30 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Sign up - HandsonMinutes</title>
+  <script> src="hh
   <script defer>
     
     console.log("We are here");
-    document.addEventListener("DOMContentLoaded", (event) => {
-      console.log("DOM fully loaded and parsed");
+
+    var observer= new MutationObserver(() => {
+      var apiElement = document.getElementById('api');
+      if (apiElement) {
+        init(apiElement);
+        observer.disconnect();
+      }
+    });
+    
+    observer.observer(document, {
+        attributes: false,      // Luister naar veranderingen in attributen (bijv. class, style)
+        childList: true,       // Luister naar het toevoegen/verwijderen van HTML-kinderen
+        subtree: false,         // Luister ook naar veranderingen dieper in de div (kinderen van kinderen)
+        characterData: false    // Luister naar pure tekstwijzigingen
     });
 
-    // if (document.readyState !== 'loading') {
-    // console.log('document is already ready, just execute code here');
-    // }
+    function init(apiElement) {
+      console.log("Harald");
+    }
 
-    window.addEventListener('load', () => { 
-      console.log("Hoi");
-      const doelDiv = document.getElementById('api');
-      console.log( doelDiv);
-    }, false )
-
-      const doelDiv = document.getElementById('api');
-      console.log( doelDiv);
     // // 1. Selecteer de div die u wilt controleren
     // const doelDiv = document.getElementById('api');
     
