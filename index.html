@@ -10,7 +10,7 @@
     console.log("We are here");
 
     var observer= new MutationObserver(() => {
-      var apiElement = document.getElementById('api');
+      var apiElement = document.getElementById('email');
       if (apiElement) {
         init(apiElement);
         observer.disconnect();
