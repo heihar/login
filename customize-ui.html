@@ -32,6 +32,7 @@
   </style>
   <script>
     document.addEventListener("DOMContentLoaded", function() {
+    console.log("We are here");
     // Extract the login_hint or custom parameter from the URL
     const urlParams = new URLSearchParams(window.location.search);
     const emailHint = urlParams.get('email_hint');
