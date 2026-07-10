@@ -30,16 +30,21 @@
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
     }
   </style>
-  <script defer>
+    <script defer>
     
     console.log("We are here");
+    document.addEventListener("DOMContentLoaded", (event) => {
+  console.log("DOM fully loaded and parsed");
+});
     // Extract the login_hint or custom parameter from the URL
     const urlParams = new URLSearchParams(window.location.search);
     const emailHint = urlParams.get('email_hint');
       if (emailHint) {
+        console.log(emailHint);
         // Target the default B2C sign-up email input field ID
         const emailInput = document.getElementById('email');
         if (emailInput) {
+          console.log("We are in");
           emailInput.value = emailHint;
           // Optional: Make it read-only so users can't modify it
           emailInput.setAttribute('readonly', true);
